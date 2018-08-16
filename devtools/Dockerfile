@@ -12,6 +12,7 @@ RUN docker-php-source extract \
     && rm -rf /var/lib/apt/lists/* \
     && pecl install yaml \
     && docker-php-ext-enable yaml \
+    && docker-php-ext-install pdo_mysql \
     && docker-php-source delete
 
 RUN curl -Ss -LO https://github.com/phalcon/phalcon-devtools/archive/v3.2.13.tar.gz \

@@ -15,6 +15,7 @@ RUN docker-php-source extract \
     && rm -rf /var/lib/apt/lists/* \
     && pecl install yaml \
     && docker-php-ext-enable yaml \
+    && docker-php-ext-install pdo_mysql \
     && docker-php-source delete
 
 RUN curl -Ss -LO https://github.com/phalcon/phalcon-devtools/archive/v3.2.13.tar.gz \
@@ -25,7 +26,7 @@ RUN curl -Ss -LO https://github.com/phalcon/phalcon-devtools/archive/v3.2.13.tar
 COPY webtools.tar.gz /
 RUN tar zxf /webtools.tar.gz \
     && rm -f /webtools.tar.gz \
-    && cd / && patch -p0 --dry-run < webtools/output-error_log.patch
+    && cd / && patch -p0 < webtools/output-error_log.patch
 
 VOLUME ["/project"]
 
