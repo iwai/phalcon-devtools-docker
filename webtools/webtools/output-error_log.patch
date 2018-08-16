@@ -1,0 +1,10 @@
+--- phalcon-devtools/scripts/Phalcon/Error/ErrorHandler.php.back	2018-08-16 06:11:24.280012000 +0000
++++ phalcon-devtools/scripts/Phalcon/Error/ErrorHandler.php	2018-08-16 06:11:40.070012000 +0000
+@@ -134,6 +134,7 @@
+             default:
+                 if ($di->has('view')) {
+                     // @todo
++	            error_log($message);
+                 } else {
+                     echo $message;
+                 }
