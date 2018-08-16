@@ -1,0 +1,17 @@
+diff --git scripts/Phalcon/Web/Tools/Views/scaffold/generate.volt scripts/Phalcon/Web/Tools/Views/scaffold/generate.volt
+index 21af5d0c..a5580a28 100644
+--- scripts/Phalcon/Web/Tools/Views/scaffold/generate.volt
++++ scripts/Phalcon/Web/Tools/Views/scaffold/generate.volt
+@@ -13,9 +13,9 @@
+                 </div>
+                 <div class="box-body">
+                     <div class="form-group">
+-                        <label for="modelNamespace" class="col-sm-2 control-label">Model's namespace</label>
++                        <label for="modelsNamespace" class="col-sm-2 control-label">Model's namespace</label>
+                         <div class="col-sm-10">
+-                            {{ input("modelNamespace", 'eg. My\Awesome\Namespace') }}
++                            {{ input("modelsNamespace", 'eg. My\Awesome\Namespace') }}
+                         </div>
+                     </div>
+
+

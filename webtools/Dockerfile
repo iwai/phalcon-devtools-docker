@@ -26,7 +26,8 @@ RUN curl -Ss -LO https://github.com/phalcon/phalcon-devtools/archive/v3.2.13.tar
 COPY webtools.tar.gz /
 RUN tar zxf /webtools.tar.gz \
     && rm -f /webtools.tar.gz \
-    && cd / && patch -p0 < webtools/output-error_log.patch
+    && cd / && patch -p0 < webtools/output-error_log.patch \
+    && patch -p0 -d /phalcon-devtools < webtools/scaffold-bugfix.patch
 
 VOLUME ["/project"]
 
